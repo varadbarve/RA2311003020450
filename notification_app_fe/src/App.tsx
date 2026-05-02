@@ -9,7 +9,6 @@ function App() {
   useEffect(() => {
     const load = async () => {
       Log("frontend", "info", "api", "Fetching notifications");
-
       const res = await fetchNotifications();
       setData(res);
     };
@@ -17,26 +16,22 @@ function App() {
     load();
   }, []);
 
-  const sorted = sortNotifications([...data]).slice(0, 10);
+  const sorted = data.length ? sortNotifications([...data]).slice(0, 5) : [];
 
   return (
     <div style={{ padding: "20px" }}>
       <h1>All Notifications</h1>
 
-      {data.length === 0 && <p>No data yet...</p>}
-
       {data.map((n, i) => (
-        <div key={i} style={{ marginBottom: "10px" }}>
+        <div key={i}>
           <b>{n.Type}</b> — {n.Message}
         </div>
       ))}
 
-      <hr />
-
       <h1>Top Notifications</h1>
 
       {sorted.map((n, i) => (
-        <div key={i} style={{ marginBottom: "10px" }}>
+        <div key={i}>
           <b>{n.Type}</b> — {n.Message}
         </div>
       ))}
