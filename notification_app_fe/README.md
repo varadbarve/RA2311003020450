@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Campus Intelligence — Notification Engine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium, high-performance notification dashboard designed for students to track campus updates in real-time.
 
-## Available Scripts
+## 🚀 Overview
 
-In the project directory, you can run:
+Campus Intelligence provides a unified view of all critical campus notifications, including Placements, Events, and Results. Built with a focus on speed, clarity, and a modern aesthetic, it ensures that students never miss an important deadline or announcement.
 
-### `npm start`
+### Key Features
+*   **Midnight Obsidian Theme**: A custom high-contrast dark mode design with neo-minimalist aesthetics.
+*   **Intelligent Sorting**: Automatically prioritizes high-impact notifications (Placements > Events > Results).
+*   **Real-time Interaction**: Features a subtle, background-integrated cursor glow for an immersive experience.
+*   **Dynamic Feed**: Always shows relevant data from "Today" and "Yesterday" via smart sample data generation.
+*   **Loading State**: Integrated skeleton loaders for a smooth perceived performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🛠️ Tech Stack
+*   **Frontend**: React (TypeScript)
+*   **Styling**: Vanilla CSS (Custom Design System)
+*   **Typography**: Inter & JetBrains Mono
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## ⚠️ Important Note: Mock Data Usage
 
-### `npm test`
+The application currently utilizes a **Mock API Layer** (`src/api.ts`) rather than a live backend connection.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Reasoning:**
+During the integration phase, authentication failures were encountered while attempting to communicate with the production server. Specifically, the system was unable to generate a valid **Bearer Token** due to an upstream Auth Failure. 
 
-### `npm run build`
+To maintain the development timeline and ensure a fully functional UI/UX demonstration, the decision was made to switch to a robust mock data provider. This allows the application to demonstrate:
+1.  Complete UI/UX interactions.
+2.  Data sorting and priority logic.
+3.  Responsive grid layouts and animations.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once the authentication issues are resolved by the infrastructure team, the `fetchNotifications` function in `src/api.ts` can be updated to point to the live endpoint.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  Clone the repository.
+2.  Install dependencies: `npm install`
+3.  Start the dev server: `npm start`
+4.  Run tests: `npm test`
