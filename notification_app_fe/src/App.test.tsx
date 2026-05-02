@@ -1,9 +1,14 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders campus hub header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/Campus Hub/i);
+  expect(headerElement).toBeInTheDocument();
+});
+
+test('renders section titles', () => {
+  render(<App />);
+  const allNotificationsHeader = screen.getByText(/All Notifications/i);
+  expect(allNotificationsHeader).toBeInTheDocument();
 });
