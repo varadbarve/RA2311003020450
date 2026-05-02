@@ -1,14 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders campus hub header', () => {
+test('renders brand header', () => {
   render(<App />);
-  const headerElement = screen.getByText(/Campus Hub/i);
+  const headerElement = screen.getByText(/Campus Intelligence/i);
   expect(headerElement).toBeInTheDocument();
 });
 
-test('renders section titles', () => {
+test('renders feed section titles', () => {
   render(<App />);
-  const allNotificationsHeader = screen.getByText(/All Notifications/i);
-  expect(allNotificationsHeader).toBeInTheDocument();
+  const archiveHeader = screen.getByText(/Archive Feed/i);
+  expect(archiveHeader).toBeInTheDocument();
 });
